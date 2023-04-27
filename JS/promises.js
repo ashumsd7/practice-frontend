@@ -25,19 +25,25 @@
 
 const cart = ["shoes", "money", "currency"];
 
-const promise = createOrder(cart); // gives a order id
-console.log('promise',promise)
-promise
-  .then((data) => {
-    console.log("order ID is", data);
+createOrder(cart)
+  .then((orderId) => {
+    console.log("order ID is", orderId);
+    return orderId;
+  })
+  .then((orderId) => {
+    return proceedToPayment(orderId);
+  })
+  .then((res) => {
+    console.log("is payment successful", res);
   })
   .catch((err) => {
     console.error("ERROR: ", err);
-  });
-// proceedToPayment(orderId);
+  }).then(orderId=>{
+    console.log('CHECK it runs pr not', orderId);
+  })
 
+//____________________
 //create a promise
-
 function createOrder(cart) {
   const promise = new Promise(function (resolve, reject) {
     // write a logic to resolve and reject the promise
@@ -53,4 +59,12 @@ function createOrder(cart) {
   });
 
   return promise;
+}
+
+function proceedToPayment(orderId) {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      rej("PAYMENT Failed");
+    }, 2000);
+  });
 }
