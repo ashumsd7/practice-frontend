@@ -41,15 +41,31 @@
 // })
 
 
+//allSettled
+// const promise2= Promise.allSettled([
 
-const promise2= Promise.allSettled([
+//     new Promise(res=>setTimeout(() => { res('resolved 1') }, 1000)),
+//     new Promise((res,rej)=>setTimeout(() => { rej('resolved 2') }, 2000)),
+//     new Promise(res=>setTimeout(() => { res('resolved 3') }, 4000))
+// ])
+
+// console.log(promise2)
+// promise2.then(res=>{
+//     console.log(res, 'sssss')
+// })
+
+
+//race
+const promise3= Promise.race([
 
     new Promise(res=>setTimeout(() => { res('resolved 1') }, 1000)),
     new Promise((res,rej)=>setTimeout(() => { rej('resolved 2') }, 2000)),
     new Promise(res=>setTimeout(() => { res('resolved 3') }, 4000))
 ])
 
-console.log(promise2)
-promise2.then(res=>{
+console.log(promise3)
+promise3.then(res=>{
     console.log(res, 'sssss')
 })
+
+// any
