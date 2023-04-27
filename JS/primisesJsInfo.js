@@ -8,8 +8,6 @@ callAPI()
       console.log("onRejected", rejData);
     }
 
-   
-
     
   )
   .catch(err=>{
