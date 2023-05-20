@@ -1,9 +1,13 @@
 import React from "react";
 import { useContext } from "react";
 import UserContext from "./UserContext";
+import { useSelector } from "react-redux";
+import store from "./store";
+
 function LazyPage() {
   const { user, setData } = useContext(UserContext);
-  console.log("contextData", user);
+//   const names= useSelector(store)
+  console.log("names", names);
   return (
     <div>
       LazyPage {user}

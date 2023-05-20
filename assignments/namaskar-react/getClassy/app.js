@@ -10,6 +10,8 @@ import Instamart from "./src/LazyPage";
 import LazyPage from "./src/LazyPage";
 import { useContext } from "react";
 import UserContext from "./src/UserContext";
+import { Provider } from "react-redux";
+import store from "./src/store";
 
 const App = () => {
   const data = useGetTime();
@@ -18,12 +20,14 @@ const App = () => {
   console.log("from context is", userInfo);
   return (
     <div>
-      APP PAGEs
-      {/* <Profile name="class-based-component" /> */}
-      <Outlet />
-      <UserContext.Provider value={{ user: userName, setData: setUserName }}>
-        <LazyPage />
-      </UserContext.Provider>
+      <Provider store={store}>
+        APP PAGEs
+        {/* <Profile name="class-based-component" /> */}
+        <Outlet />
+        <UserContext.Provider value={{ user: userName, setData: setUserName }}>
+          <LazyPage />
+        </UserContext.Provider>
+      </Provider>
     </div>
   );
 };
