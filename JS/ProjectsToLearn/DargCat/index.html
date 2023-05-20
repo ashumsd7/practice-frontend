@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <!-- <style href="style.css"></style> -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="draggable-elements">
+      <div class="draggable " draggable='true' id="letter-a" style="color: red">A</div>
+      <div class="draggable" draggable='true'  id="letter-a" style="color: blue">B</div>
+      <div class="draggable" draggable='true'  id="letter-a" style="color: gray">C</div>
+      <div class="draggable" draggable='true'  id="letter-a" style="color: black">D</div>
+      <div class="draggable" draggable='true'  id="letter-a" style="color: cyan">E</div>
+    </div>
+
+ 
+    <hr>
+ 
+    <div class="droppabel-elements">
+      <div class="droppable" data-draggable-id="letter-a">
+        <span>A</span>
+      </div>
+
+      <div class="droppable" data-draggable-id="letter-b">
+        <span>B</span>
+      </div>
+
+      <div class="droppable" data-draggable-id="letter-c">
+        <span>C</span>
+      </div>
+
+      <div class="droppable" data-draggable-id="'letter-d">
+        <span>D</span>
+      </div>
+      <div class="droppable" data-draggable-id="'letter-e">
+        <span>E</span>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
